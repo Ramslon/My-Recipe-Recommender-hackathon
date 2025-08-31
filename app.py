@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify, session, send_from_directory
 from flask_cors import CORS
 import psycopg2
 import openai
@@ -143,6 +143,10 @@ def upgrade():
     cursor.execute("UPDATE users SET premium=TRUE WHERE username=%s", (username,))
     db.commit()
     return jsonify(success=True, message="Upgraded to premium.")
+
+@app.route('/', methods=['GET'])
+def home():
+    return send_from_directory('.', 'index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
