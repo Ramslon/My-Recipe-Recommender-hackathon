@@ -5,17 +5,20 @@ import openai
 import requests
 import json
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Loads variables from .env into environment
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = os.getenv('FLASK_SECRET_KEY')
 CORS(app)
 
 # MySQL config
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="ramson@111",
-    database="Recipe_DB"
+    host=os.getenv("MYSQL_HOST"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
+    database=os.getenv("MYSQL_DATABASE")
 )
 cursor = db.cursor(dictionary=True)
 
@@ -100,8 +103,8 @@ def pay():
     phone_number = data['phone_number']
     amount = data.get('amount', 500)  # Set your premium price
 
-    INTASEND_API_KEY = "ISSecretKey_test_dd01a7f1-7b31-4b01-8716-4b9af26935af"
-    INTASEND_PUBLIC_KEY = "ISPubKey_test_d57625e7-084f-4978-a7d6-6a3c85533bae"
+    INTASEND_API_KEY = os.getenv("INTASEND_API_KEY")
+    INTASEND_PUBLIC_KEY = os.getenv("INTASEND_PUBLIC_KEY")
     INTASEND_URL = "https://sandbox.intasend.com/api/v1/checkout/mpesa/"
 
     payload = {
