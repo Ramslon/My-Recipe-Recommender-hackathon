@@ -1,0 +1,388 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(60,60,60,0.18);
+    padding: 32px 24px;
+}
+
+h1 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 24px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+#authSection {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.account-section, .login-section {
+    background: #e0f7fa;
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 8px rgba(0,121,107,0.08);
+    min-width: 300px;
+    flex: 1;
+}
+
+.account-section h2, .login-section h2 {
+    margin-top: 0;
+    color: #00695c;
+    font-size: 1.3em;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+#accountForm, #loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#accountForm input, #loginForm input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #b2dfdb;
+    font-size: 1em;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+#accountForm input:focus, #loginForm input:focus {
+    border: 1.5px solid #00796b;
+    outline: none;
+}
+
+#accountForm button, #loginForm button {
+    background: linear-gradient(90deg, #43c6ac 0%, #f8ffae 100%);
+    color: #00695c;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#accountForm button:hover, #loginForm button:hover {
+    background: linear-gradient(90deg, #f8ffae 0%, #43c6ac 100%);
+}
+
+#accountMessage, #loginMessage {
+    margin-top: 10px;
+    color: #388e3c;
+    font-size: 1em;
+    min-height: 20px;
+    text-align: center;
+}
+
+#dashboard {
+    margin-top: 16px;
+}
+
+.filter-section {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+#ingredientInput {
+    padding: 12px;
+    width: 320px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border: 1px solid #b2dfdb;
+    background: #f1f8e9;
+    transition: border 0.2s;
+}
+
+#ingredientInput:focus {
+    border: 1.5px solid #43c6ac;
+    outline: none;
+}
+
+#recipesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+}
+
+.recipe-card {
+    background: linear-gradient(135deg, #e0f7fa 0%, #f8ffae 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(67,198,172,0.12);
+    width: 260px;
+    padding: 22px 18px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.recipe-card:hover {
+    box-shadow: 0 8px 32px rgba(67,198,172,0.18);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.recipe-title {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #00796b;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.recipe-ingredients {
+    font-size: 1em;
+    color: #388e3c;
+    margin-bottom: 10px;
+}
+
+.recipe-instructions {
+    font-size: 0.98em;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.pay-btn {
+    background: linear-gradient(90deg, #43c6ac 0%, #f8ffae 100%);
+    color: #00695c;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.pay-btn:hover {
+    background: linear-gradient(90deg, #f8ffae 0%, #43c6ac 100%);
+}
+
+.suggestion-section {
+    background: #fffde7;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 32px auto 0 auto;
+    box-shadow: 0 2px 8px rgba(255, 235, 59, 0.08);
+    text-align: center;
+    max-width: 600px;
+}
+
+#suggestionForm input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ffe082;
+    font-size: 1em;
+    background: #fff;
+    width: 60%;
+    margin-right: 8px;
+}
+
+#suggestionForm button {
+    background: linear-gradient(90deg, #ffe082 0%, #ffd54f 100%);
+    color: #795548;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#suggestionResult {
+    margin-top: 16px;
+    color: #6d4c41;
+    font-size: 1.1em;
+    min-height: 24px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    position: relative;
+    width: 350px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #00796b;
+}
+
+#paymentForm input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #b2dfdb;
+    font-size: 1em;
+}
+
+#paymentForm button {
+    background: linear-gradient(90deg, #43c6ac 0%, #f8ffae 100%);
+    color: #00695c;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#paymentMessage {
+    margin-top: 10px;
+    color: #388e3c;
+    font-size: 1em;
+    min-height: 20px;
+}
+
+.upgrade-section {
+    background: #fffde7;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px auto 0 auto;
+    box-shadow: 0 2px 8px rgba(255, 235, 59, 0.08);
+    text-align: center;
+    max-width: 400px;
+}
+
+#upgradeBtn {
+    background: linear-gradient(90deg, #ff9800 0%, #ffd54f 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.12);
+}
+
+#upgradeBtn:hover {
+    background: linear-gradient(90deg, #ffd54f 0%, #ff9800 100%);
+}
+
+#mpesaPhone {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ffe082;
+    font-size: 1em;
+    background: #fff;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#upgradeMessage {
+    margin-top: 10px;
+    color: #388e3c;
+    font-size: 1em;
+    min-height: 20px;
+    text-align: center;
+}
+
+.footer {
+    background: linear-gradient(90deg, #e0f7fa 0%, #f8ffae 100%);
+    color: #00695c;
+    text-align: center;
+    padding: 24px 0 12px 0;
+    margin-top: 40px;
+    border-top: 2px solid #b2dfdb;
+    font-size: 1.08em;
+    box-shadow: 0 -2px 12px rgba(67,198,172,0.08);
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 18px 0;
+}
+
+.footer-list li {
+    margin: 10px 0;
+    font-size: 1.08em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-link {
+    color: #00796b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-link:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
+.footer-social {
+    margin: 18px 0 10px 0;
+}
+
+.footer-social a {
+    margin: 0 12px;
+    color: #00796b;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+    color: #388e3c;
+    transform: scale(1.2);
+}
+
+.footer-copy {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.98em;
+    color: #888;
+    letter-spacing: 1px;
+}
