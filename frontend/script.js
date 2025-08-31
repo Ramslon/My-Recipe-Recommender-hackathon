@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://your-render-service.onrender.com";
 let currentUser = null;
 let suggestionCount = 0;
 const SUGGESTION_LIMIT = 3;
