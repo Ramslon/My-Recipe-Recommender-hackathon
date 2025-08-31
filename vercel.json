@@ -1,11 +1,5 @@
 {
-  "builds": [
-    { "src": "app.py", "use": "@vercel/python" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "app.py" }
-  ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://your-render-service.onrender.com/api/$1" }
+    { "source": "/api/(.*)", "destination": "https://my-recipe-recommender-hackathon.onrender.com" }
   ]
 }
