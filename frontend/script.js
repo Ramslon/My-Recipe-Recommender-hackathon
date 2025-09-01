@@ -8,42 +8,50 @@ const sampleRecipes = [
     {
         title: "Tomato Pasta",
         ingredients: "Pasta, Tomato, Garlic, Olive Oil, Salt",
-        instructions: "Boil pasta. Sauté garlic in olive oil, add chopped tomatoes, cook until soft. Mix with pasta and serve."
+        instructions: "Boil pasta. Sauté garlic in olive oil, add chopped tomatoes, cook until soft. Mix with pasta and serve.",
+        image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "Chicken Stir Fry",
         ingredients: "Chicken, Bell Pepper, Onion, Soy Sauce, Oil",
-        instructions: "Slice chicken and vegetables. Stir fry in oil, add soy sauce, cook until chicken is done."
+        instructions: "Slice chicken and vegetables. Stir fry in oil, add soy sauce, cook until chicken is done.",
+        image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "Vegetable Omelette",
         ingredients: "Eggs, Onion, Tomato, Spinach, Salt, Pepper",
-        instructions: "Beat eggs, add chopped vegetables, season. Cook in a pan until set."
+        instructions: "Beat eggs, add chopped vegetables, season. Cook in a pan until set.",
+        image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "Beef Stew",
         ingredients: "Beef, Potato, Carrot, Onion, Tomato Paste, Salt, Pepper",
-        instructions: "Brown beef, add chopped vegetables, tomato paste, and water. Simmer until tender."
+        instructions: "Brown beef, add chopped vegetables, tomato paste, and water. Simmer until tender.",
+        image: "https://images.unsplash.com/photo-1464306076886-debede6bbf09?auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "Fruit Salad",
         ingredients: "Banana, Apple, Orange, Grapes, Honey, Lemon Juice",
-        instructions: "Chop fruits, mix with honey and lemon juice. Chill and serve."
+        instructions: "Chop fruits, mix with honey and lemon juice. Chill and serve.",
+        image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "Chapati Wraps",
         ingredients: "Chapati, Chicken, Lettuce, Tomato, Mayonnaise",
-        instructions: "Fill chapati with cooked chicken, lettuce, tomato, and mayonnaise. Roll and serve."
+        instructions: "Fill chapati with cooked chicken, lettuce, tomato, and mayonnaise. Roll and serve.",
+        image: "https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "Simple Pilau",
         ingredients: "Rice, Beef, Onion, Pilau Masala, Garlic, Oil",
-        instructions: "Brown beef and onion, add garlic and pilau masala, then rice and water. Cook until rice is done."
+        instructions: "Brown beef and onion, add garlic and pilau masala, then rice and water. Cook until rice is done.",
+        image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "Avocado Toast",
         ingredients: "Bread, Avocado, Salt, Pepper, Lemon Juice",
-        instructions: "Toast bread, mash avocado with salt, pepper, and lemon juice. Spread on toast."
+        instructions: "Toast bread, mash avocado with salt, pepper, and lemon juice. Spread on toast.",
+        image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
     }
 ];
 
@@ -205,7 +213,7 @@ document.getElementById('suggestionForm').addEventListener('submit', function(e)
 function fetchRecipes() {
     fetch(`${API_BASE}/recipes`)
         .then(res => res.json())
-        .then(data => {
+        .then (data => {
             if (data.success && data.recipes) {
                 displayRecipes(data.recipes);
             }
@@ -247,6 +255,7 @@ function displayRecipes(recipes) {
         card.style.transition = "transform 0.2s";
         card.style.cursor = "pointer";
         card.innerHTML = `
+            ${recipe.image ? `<img src="${recipe.image}" alt="${recipe.title}" class="recipe-img" style="width:100%;height:140px;object-fit:cover;border-radius:10px 10px 0 0;margin-bottom:10px;">` : ""}
             <div class="recipe-title" style="font-size:1.2em; color:#00796b; font-weight:bold; margin-bottom:8px;">${recipe.title}</div>
             <div class="recipe-ingredients" style="color:#388e3c; margin-bottom:6px;"><strong>Ingredients:</strong> ${recipe.ingredients}</div>
             <div class="recipe-instructions" style="color:#333; font-size:0.98em;"><strong>Instructions:</strong> ${recipe.instructions}</div>
