@@ -12,10 +12,7 @@ load_dotenv()  # Loads variables from .env into environment
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY')
 CORS(app, origins=[
-    "https://my-recipe-recommender-nobfp5yx1-ramson-lonayos-projects.vercel.app",
-    "https://my-recipe-recommender-9yd7auids-ramson-lonayos-projects.vercel.app",
-    "https://my-recipe-recommender-mwj5drmrc-ramson-lonayos-projects.vercel.app",
-    "https://my-recipe-recommender-o1md9esra-ramson-lonayos-projects.vercel.app"
+    "https://my-recipe-recommender-9yd7auids-ramson-lonayos-projects.vercel.app/"
 ])
 
 # PostgreSQL config
