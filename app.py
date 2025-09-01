@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session, send_from_directory
+from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 import psycopg2
 import openai
@@ -11,7 +11,10 @@ load_dotenv()  # Loads variables from .env into environment
 
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY')
-CORS(app, origins=["https://my-recipe-recommender-4nfrb59je-ramson-lonayos-projects.vercel.app"])
+CORS(app, origins=[
+    "https://my-recipe-recommender-4nfrb59je-ramson-lonayos-projects.vercel.app",
+    "https://my-recipe-recommender-3wesjtn7d-ramson-lonayos-projects.vercel.app"
+])
 
 # PostgreSQL config
 db = psycopg2.connect(
@@ -143,10 +146,6 @@ def upgrade():
     cursor.execute("UPDATE users SET premium=TRUE WHERE username=%s", (username,))
     db.commit()
     return jsonify(success=True, message="Upgraded to premium.")
-
-@app.route('/', methods=['GET'])
-def home():
-    return send_from_directory('.', 'index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
