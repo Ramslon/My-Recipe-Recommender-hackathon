@@ -1,4 +1,4 @@
-const API_BASE = "https://your-render-service.onrender.com";
+const API_BASE = "https://my-recipe-recommender-hackathon.onrender.com";
 let currentUser = null;
 let suggestionCount = 0;
 const SUGGESTION_LIMIT = 3;
