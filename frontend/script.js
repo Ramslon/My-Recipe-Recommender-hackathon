@@ -204,12 +204,12 @@ document.getElementById('suggestionForm').addEventListener('submit', function(e)
 // Fetch recipes from backend
 function fetchRecipes() {
     fetch(`${API_BASE}/recipes`)
-    .then(res => res.json())
-    .then data => {
-        if (data.success && data.recipes) {
-            displayRecipes(data.recipes);
-        }
-    });
+        .then(res => res.json())
+        .then(data => {
+            if (data.success && data.recipes) {
+                displayRecipes(data.recipes);
+            }
+        });
 }
 
 // Show toast message
