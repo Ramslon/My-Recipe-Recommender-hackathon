@@ -12,8 +12,6 @@ load_dotenv()  # Loads variables from .env into environment
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY')
 CORS(app, origins=[
-    "https://my-recipe-recommender-4nfrb59je-ramson-lonayos-projects.vercel.app",
-    "https://my-recipe-recommender-3wesjtn7d-ramson-lonayos-projects.vercel.app",
     "https://my-recipe-recommender-mwj5drmrc-ramson-lonayos-projects.vercel.app"
 ])
 
@@ -29,6 +27,11 @@ cursor = db.cursor()
 
 # OpenAI config
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Root route to avoid 404
+@app.route('/', methods=['GET'])
+def home():
+    return "Recipe Recommender API is running."
 
 # User registration
 @app.route('/register', methods=['POST'])
@@ -53,7 +56,6 @@ def login():
     cursor.execute("SELECT * FROM users WHERE username=%s AND password=%s", (username, password))
     user = cursor.fetchone()
     if user:
-        # Adjust indices based on your table structure
         session['user_id'] = user[0]  # id
         return jsonify(success=True, user={
             'username': user[1],  # username
