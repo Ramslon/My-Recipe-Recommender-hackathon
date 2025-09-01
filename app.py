@@ -44,9 +44,17 @@ def register():
     cursor.execute("SELECT * FROM users WHERE username=%s", (username,))
     if cursor.fetchone():
         return jsonify(success=False, message="Username already exists.")
-    cursor.execute("INSERT INTO users (username, email, password) VALUES (%s, %s, %s)", (username, email, password))
+    cursor.execute("INSERT INTO users (username, email, password, premium) VALUES (%s, %s, %s, %s)", (username, email, password, False))
     db.commit()
-    return jsonify(success=True)
+    # Immediately log in the user after registration
+    cursor.execute("SELECT * FROM users WHERE username=%s", (username,))
+    user = cursor.fetchone()
+    session['user_id'] = user[0]
+    return jsonify(success=True, user={
+        'username': user[1],
+        'email': user[2],
+        'premium': user[4] if len(user) > 4 else False
+    })
 
 # User login
 @app.route('/login', methods=['POST'])
