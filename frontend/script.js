@@ -15,43 +15,43 @@ const sampleRecipes = [
         title: "Chicken Stir Fry",
         ingredients: "Chicken, Bell Pepper, Onion, Soy Sauce, Oil",
         instructions: "Slice chicken and vegetables. Stir fry in oil, add soy sauce, cook until chicken is done.",
-        image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+        image: "https://www.eatingbirdfood.com/wp-content/uploads/2025/03/chicken-stir-fry-hero-new-1024x1536.jpg"
     },
     {
         title: "Vegetable Omelette",
         ingredients: "Eggs, Onion, Tomato, Spinach, Salt, Pepper",
         instructions: "Beat eggs, add chopped vegetables, season. Cook in a pan until set.",
-        image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+        image: "https://brooklynfarmgirl.com/wp-content/uploads/2016/02/Cheesy-Vegetable-Omelette-Featured-Image.jpg"
     },
     {
         title: "Beef Stew",
         ingredients: "Beef, Potato, Carrot, Onion, Tomato Paste, Salt, Pepper",
         instructions: "Brown beef, add chopped vegetables, tomato paste, and water. Simmer until tender.",
-        image: "https://images.unsplash.com/photo-1464306076886-debede6bbf09?auto=format&fit=crop&w=400&q=80"
+        image: "https://th.bing.com/th/id/R.f0c0cb0348601dfdedb59aac8614deb0?rik=mkljDmxdRvXjig&pid=ImgRaw&r=0"
     },
     {
         title: "Fruit Salad",
         ingredients: "Banana, Apple, Orange, Grapes, Honey, Lemon Juice",
         instructions: "Chop fruits, mix with honey and lemon juice. Chill and serve.",
-        image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+        image: "https://tse3.mm.bing.net/th/id/OIP.XgdXsvDvqO-YSilrJ_NKRgHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
     },
     {
         title: "Chapati Wraps",
         ingredients: "Chapati, Chicken, Lettuce, Tomato, Mayonnaise",
         instructions: "Fill chapati with cooked chicken, lettuce, tomato, and mayonnaise. Roll and serve.",
-        image: "https://images.unsplash.com/photo-1506089676908-3592f7389d4d?auto=format&fit=crop&w=400&q=80"
+        image: "https://th.bing.com/th/id/R.63eb5d9b757d0eb885d79af9a806d1f3?rik=bDqzn8PzqYlaiQ&pid=ImgRaw&r=0"
     },
     {
         title: "Simple Pilau",
         ingredients: "Rice, Beef, Onion, Pilau Masala, Garlic, Oil",
         instructions: "Brown beef and onion, add garlic and pilau masala, then rice and water. Cook until rice is done.",
-        image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+        image: "https://img-global.cpcdn.com/recipes/e16e61be3886271d/751x532cq70/beef-pilau-recipe-main-photo.jpg"
     },
     {
         title: "Avocado Toast",
         ingredients: "Bread, Avocado, Salt, Pepper, Lemon Juice",
         instructions: "Toast bread, mash avocado with salt, pepper, and lemon juice. Spread on toast.",
-        image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+        image: "https://www.jessicagavin.com/wp-content/uploads/2020/07/avocado-toast-11-1024x1536.jpg"
     }
 ];
 
