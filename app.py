@@ -13,7 +13,8 @@ app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY')
 CORS(app, origins=[
     "https://my-recipe-recommender-4nfrb59je-ramson-lonayos-projects.vercel.app",
-    "https://my-recipe-recommender-3wesjtn7d-ramson-lonayos-projects.vercel.app"
+    "https://my-recipe-recommender-3wesjtn7d-ramson-lonayos-projects.vercel.app",
+    "https://my-recipe-recommender-mwj5drmrc-ramson-lonayos-projects.vercel.app"
 ])
 
 # PostgreSQL config
