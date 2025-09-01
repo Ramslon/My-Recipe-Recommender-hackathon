@@ -205,11 +205,35 @@ document.getElementById('suggestionForm').addEventListener('submit', function(e)
 function fetchRecipes() {
     fetch(`${API_BASE}/recipes`)
     .then(res => res.json())
-    .then(data => {
+    .then data => {
         if (data.success && data.recipes) {
             displayRecipes(data.recipes);
         }
     });
+}
+
+// Show toast message
+function showToast(message) {
+    let toast = document.getElementById('toastMessage');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toastMessage';
+        toast.style.position = 'fixed';
+        toast.style.bottom = '24px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.background = '#43c6ac';
+        toast.style.color = '#fff';
+        toast.style.padding = '14px 24px';
+        toast.style.borderRadius = '8px';
+        toast.style.fontSize = '1.1em';
+        toast.style.zIndex = '9999';
+        toast.style.boxShadow = '0 2px 8px rgba(67,198,172,0.18)';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; }, 2000);
 }
 
 // Display recipes as clickable cards with UI tweaks
@@ -229,7 +253,7 @@ function displayRecipes(recipes) {
         `;
         card.onmouseover = () => { card.style.transform = "scale(1.03)"; card.style.boxShadow = "0 8px 24px rgba(67,198,172,0.18)"; };
         card.onmouseout = () => { card.style.transform = "scale(1)"; card.style.boxShadow = "0 2px 8px rgba(67,198,172,0.15)"; };
-        card.onclick = () => alert(`You picked: ${recipe.title}`);
+        card.onclick = () => showToast(`You picked: ${recipe.title}`);
         container.appendChild(card);
     });
 }
