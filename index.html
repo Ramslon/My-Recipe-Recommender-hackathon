@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Fix: Add viewport meta -->
+    <title>Recipe Recommender</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recipe Recommender</h1>
+        <div id="authSection">
+            <div class="account-section">
+                <h2>Create Account</h2>
+                <form id="accountForm">
+                    <input type="text" id="username" placeholder="Username" required autocomplete="username">
+                    <input type="email" id="email" placeholder="Email" required autocomplete="email">
+                    <input type="password" id="password" placeholder="Password" required autocomplete="new-password">
+                    <button type="submit">Create Account</button>
+                </form>
+                <div id="accountMessage"></div>
+            </div>
+            <div class="login-section">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <input type="text" id="loginUsername" placeholder="Username" required autocomplete="username">
+                    <input type="password" id="loginPassword" placeholder="Password" required autocomplete="current-password">
+                    <button type="submit">Login</button>
+                </form>
+                <div id="loginMessage"></div>
+            </div>
+        </div>
+        <div id="dashboard" style="display:none;">
+            <button id="logoutBtn" style="float:right; margin-bottom:10px;">Log Out</button>
+            <div id="upgradeContainer"></div>
+            <div class="suggestion-section">
+                <h2>AI Recipe Suggestion</h2>
+                <form id="suggestionForm">
+                    <input type="text" id="suggestIngredients" placeholder="Enter ingredients (comma separated)" required>
+                    <button type="submit">Get Suggestions</button>
+                </form>
+                <div id="suggestionResult"></div>
+                <div id="suggestionLimitMsg"></div>
+                <div id="sampleRecipesMsg" style="color:#d32f2f; margin-top:16px;"></div>
+            </div>
+            <div id="recipesContainer"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://t.me/http://Grrgh789_RL" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram fa-2x"></i>
+                </a>
+                <a href="https://wa.me/254115397267" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp fa-2x"></i>
+                </a>
+                <a href="mailto:ramsonlonayo@gmail.com" title="Gmail">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </a>
+            </div>
+            <span class="footer-copy">&copy; 2025 Recipe Recommender</span>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
