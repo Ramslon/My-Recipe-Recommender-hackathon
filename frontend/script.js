@@ -9,7 +9,7 @@ const sampleRecipes = [
         title: "Tomato Pasta",
         ingredients: "Pasta, Tomato, Garlic, Olive Oil, Salt",
         instructions: "Boil pasta. Sauté garlic in olive oil, add chopped tomatoes, cook until soft. Mix with pasta and serve.",
-        image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+        image: "https://i2.wp.com/nourish-and-fete.com/wp-content/uploads/2019/07/roasted-tomato-pasta-3.jpg"
     },
     {
         title: "Chicken Stir Fry",
